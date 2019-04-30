@@ -1,0 +1,14 @@
+language: java
+jdk:
+  - oraclejdk8
+services:
+  - mysql
+sudo: required
+
+before_script:
+  - sudo /etc/init.d/mysql stop
+  - sudo /etc/init.d/mysql start
+
+before_install:
+  - chmod +x mvnw
+  - sudo mysql -e 'CREATE DATABASE IF NOT EXISTS e1500943_reactspring;'
